@@ -1,7 +1,7 @@
 <button *ngIf="isSmallScreen" (click)="drawer.toggle()" mat-icon-button>
   <mat-icon>menu</mat-icon>
 </button>
-
+<button mat-button (click)="openDialog()">Launch dialog</button>
 <mat-drawer-container class="menu" autosize>
   <mat-drawer #drawer [opened]="!isSmallScreen" mode="side" position="start">
     <mat-nav-list>
