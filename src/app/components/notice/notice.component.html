@@ -1,27 +1,25 @@
 <button *ngIf="isSmallScreen" (click)="drawer.toggle()" mat-icon-button>
   <mat-icon>menu</mat-icon>
 </button>
-<button mat-button (click)="openDialog()">Launch dialog</button>
+
 <mat-drawer-container class="menu" autosize>
   <mat-drawer #drawer [opened]="!isSmallScreen" mode="side" position="start">
     <mat-nav-list>
-      <mat-card *ngFor="let card of locations" class="example-card">
-        <mat-card-header>
+      <mat-card (click)="openDialog(location); setLocation(location)" *ngFor="let location of locations" class="example-card">
+        <mat-card-header >
           <img
             class="image"
             mat-card-sm-image
             src="https://images.adsttc.com/media/images/5ff4/88a7/63c0/17cd/f900/0527/medium_jpg/shutterstock_397537417.jpg?1609861261"
           />
           <mat-card-title-group>
-            <mat-card-title>{{ card.address }}</mat-card-title>
+            <mat-card-title>{{ location.address }}</mat-card-title>
             <mat-card-subtitle
-              >Service: {{ card.serviceName }}</mat-card-subtitle
+              >Service: {{ location.serviceName }}</mat-card-subtitle
             >
           </mat-card-title-group>
         </mat-card-header>
-        <!-- <mat-card-content>
-          {{ card.typologyDescription }}
-        </mat-card-content> -->
+
       </mat-card>
     </mat-nav-list>
   </mat-drawer>
