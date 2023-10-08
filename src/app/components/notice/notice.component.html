@@ -5,8 +5,12 @@
 <mat-drawer-container class="menu" autosize>
   <mat-drawer #drawer [opened]="!isSmallScreen" mode="side" position="start">
     <mat-nav-list>
-      <mat-card (click)="openDialog(location); setLocation(location)" *ngFor="let location of locations" class="example-card">
-        <mat-card-header >
+      <mat-card
+        (click)="openDialog(location); setLocation(location)"
+        *ngFor="let location of locations"
+        class="example-card"
+      >
+        <mat-card-header>
           <img
             class="image"
             mat-card-sm-image
@@ -19,7 +23,6 @@
             >
           </mat-card-title-group>
         </mat-card-header>
-
       </mat-card>
     </mat-nav-list>
   </mat-drawer>

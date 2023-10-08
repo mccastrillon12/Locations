@@ -1,4 +1,5 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
+import { Subject } from 'rxjs';
 import { LocationModel } from 'src/app/components/notice/model/location.model';
 
 @Injectable({
@@ -7,8 +8,9 @@ import { LocationModel } from 'src/app/components/notice/model/location.model';
 export class SharedLocationService {
   location: LocationModel;
 
-  @Output()
-  locationEmiter: EventEmitter<LocationModel> = new EventEmitter<LocationModel>();
+  sendLocationSubject = new Subject<LocationModel>();
+
+  sendLocationObservable =this.sendLocationSubject.asObservable();
 
   constructor() {
     this.location = {
@@ -21,13 +23,8 @@ export class SharedLocationService {
     };
   }
 
-  setLocation(newLocation: LocationModel) {
-    this.location = newLocation;
-    this.emitLocation();
-  }
-
-  emitLocation() {
-    console.log(this.location)
-    this.locationEmiter.emit(this.location);
+  sendLocation(locationSended: LocationModel){
+    this.location = locationSended;
+    this.sendLocationSubject.next(locationSended)
   }
 }

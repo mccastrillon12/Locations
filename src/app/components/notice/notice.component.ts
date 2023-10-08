@@ -18,11 +18,13 @@ export class NoticeComponent implements OnInit {
   isSmallScreen = window.innerWidth < 769;
 
   constructor(
+
     private locationService: LocationService,
     private dialog: MatDialog,
     private sharedLocationService: SharedLocationService
   ) {
     this.onResize();
+
   }
 
   ngOnInit(): void {
@@ -68,7 +70,9 @@ export class NoticeComponent implements OnInit {
   }
 
   setLocation(locationObject: LocationModel) {
-    this.location = locationObject;
-    this.sharedLocationService.setLocation(this.location);
+    this.sharedLocationService.sendLocation(locationObject);
   }
+
+
+
 }
