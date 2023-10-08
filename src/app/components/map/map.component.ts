@@ -14,6 +14,8 @@ import Style from 'ol/style/Style';
 import Icon from 'ol/style/Icon';
 import VectorSource from 'ol/source/Vector';
 import VectorLayer from 'ol/layer/Vector';
+import { Overlay } from 'ol';
+import { toStringHDMS } from 'ol/coordinate';
 
 @Component({
   selector: 'app-map',
@@ -46,6 +48,15 @@ export class MapComponent implements OnInit, AfterViewInit {
   }
 
   private createMap(): void {
+    const container = document.getElementById('popup');
+    const content = document.getElementById('popup-content');
+    const closer = document.getElementById('popup-closer');
+
+    const overlay = new Overlay({
+      element: container,
+      autoPan: true,
+    });
+
     this.mapLayer = new TileLayer({
       source: new XYZ({
         url: 'https://{a-c}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -60,9 +71,25 @@ export class MapComponent implements OnInit, AfterViewInit {
     this.map = new Map({
       target: this.mapElementId,
       layers: [this.mapLayer],
+      overlays: [overlay],
       view: this.mapView,
       controls: defaultControls().extend([]),
     });
+
+    this.map.on('singleclick', function (evt: any) {
+      const coordinate = evt.coordinate;
+      const hdms = toStringHDMS(Proj.toLonLat(coordinate));
+
+      content.innerHTML =
+        '<p>Current coordinates are :</p><code>' + hdms + '</code>';
+      overlay.setPosition(coordinate);
+    });
+
+    closer.onclick = function () {
+      overlay.setPosition(undefined);
+      closer.blur();
+      return false;
+    };
 
     this.setMarker();
   }
