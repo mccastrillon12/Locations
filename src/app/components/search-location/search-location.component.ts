@@ -22,6 +22,7 @@ export class SearchLocationComponent {
       long: this.longitud,
       descriptionLegend: '',
       typologyDescription: '',
+      image:''
     };
 
     this.sharedLocationService.sendLocation(locationObject);

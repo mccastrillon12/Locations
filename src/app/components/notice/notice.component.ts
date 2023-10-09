@@ -5,6 +5,7 @@ import { ResponseApi } from './model/response-api.model';
 import { MatDialog } from '@angular/material/dialog';
 import { InformationModalComponent } from '../information-modal/information-modal.component';
 import { SharedLocationService } from 'src/app/shared/service/shared-location.service';
+import { IMAGES_LIBRARY } from 'src/app/shared/images-libary/images-library';
 
 @Component({
   selector: 'app-notice',
@@ -18,13 +19,11 @@ export class NoticeComponent implements OnInit {
   isSmallScreen = window.innerWidth < 769;
 
   constructor(
-
     private locationService: LocationService,
     private dialog: MatDialog,
     private sharedLocationService: SharedLocationService
   ) {
     this.onResize();
-
   }
 
   ngOnInit(): void {
@@ -34,7 +33,9 @@ export class NoticeComponent implements OnInit {
   getLocations() {
     this.locationService.getLocations().subscribe((data) => {
       this.saveLocation(data);
+      this.getImages(this.locations)
     });
+
   }
 
   private saveLocation(data: ResponseApi[]) {
@@ -47,9 +48,16 @@ export class NoticeComponent implements OnInit {
         serviceName: data.service_name,
         descriptionLegend: data.typology.description_legend,
         typologyDescription: data.typology.typology_description,
+        image: '',
       };
       this.locations.push(location);
     });
+  }
+
+  private getImages(locations: LocationModel[]) {
+    for (let i = 0; i <= locations.length; i++) {
+      locations[i].image = IMAGES_LIBRARY[i];
+    }
   }
 
   badgevisibility() {
@@ -63,7 +71,6 @@ export class NoticeComponent implements OnInit {
 
   openDialog(location: LocationModel) {
     this.dialog.open(InformationModalComponent, {
-      height: '400px',
       data: location,
     });
   }
@@ -71,7 +78,4 @@ export class NoticeComponent implements OnInit {
   setLocation(locationObject: LocationModel) {
     this.sharedLocationService.sendLocation(locationObject);
   }
-
-
-
 }

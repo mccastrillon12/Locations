@@ -5,4 +5,5 @@ export interface LocationModel {
   serviceName: string;
   descriptionLegend:string;
   typologyDescription:string;
+  image:string;
 }

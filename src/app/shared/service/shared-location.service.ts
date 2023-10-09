@@ -20,6 +20,7 @@ export class SharedLocationService {
       descriptionLegend: '',
       serviceName: '',
       typologyDescription: '',
+      image:''
     };
   }
 

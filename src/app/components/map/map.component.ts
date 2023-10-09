@@ -65,7 +65,7 @@ export class MapComponent implements OnInit, AfterViewInit {
 
     this.mapView = new View({
       center: Proj.fromLonLat([this.location.long, this.location.lat]),
-      zoom: 18,
+      zoom: 16,
     });
 
     this.map = new Map({

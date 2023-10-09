@@ -1,12 +1,14 @@
-<button class="menuButton" *ngIf="isSmallScreen" (click)="drawer.toggle()" mat-icon-button>
+<button
+  class="menuButton"
+  *ngIf="isSmallScreen"
+  (click)="drawer.toggle()"
+  mat-icon-button
+>
   <mat-icon>menu</mat-icon>
 </button>
-<button class="home" mat-fab extended color="primary">
-  <a class="link" href="/search">
-    New Coordinates
-  </a>
-
-</button>
+<a class="link" href="/search">
+  <button class="home" mat-fab extended color="primary">New Coordinates</button>
+</a>
 <mat-drawer-container class="menu" autosize>
   <mat-drawer #drawer [opened]="!isSmallScreen" mode="side" position="start">
     <mat-nav-list>
@@ -19,7 +21,7 @@
           <img
             class="image"
             mat-card-sm-image
-            src="https://images.adsttc.com/media/images/5ff4/88a7/63c0/17cd/f900/0527/medium_jpg/shutterstock_397537417.jpg?1609861261"
+            src="{{location.image}}"
           />
           <mat-card-title-group>
             <mat-card-title>{{ location.address }}</mat-card-title>

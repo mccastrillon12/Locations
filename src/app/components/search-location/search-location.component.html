@@ -1,45 +1,44 @@
-
-  <form class="example-form">
-    <ng-container *ngIf="inputVisible">
-      <td>
-        <mat-form-field class="example-full-width">
-          <mat-label>Latitud</mat-label>
-          <input matInput [(ngModel)]="latitud" name="latitud" />
-        </mat-form-field>
-      </td>
-      <td>
-        <mat-form-field class="example-full-width">
-          <mat-label>Longitud</mat-label>
-          <input matInput [(ngModel)]="longitud" name="longitud" />
-        </mat-form-field>
-      </td>
-    </ng-container>
-    <button
-      *ngIf="inputVisible"
-      mat-fab
-      extended
-      color="primary"
-      [disabled]="!latitud || !longitud"
-      (click)="setLocation()"
-    >
-      search
-    </button>
-    <button
-      *ngIf="!inputVisible"
-      mat-fab
-      extended
-      color="primary"
-      (click)="mostrarCamposDeEntrada()"
-    >
-      New search
-    </button>
-  </form>
-  <button class="home" mat-fab extended color="primary">
-    <a class="link" href="/home">
-      <mat-icon
-        aria-hidden="false"
-        aria-label="Example home icon"
-        fontIcon="home"
-      ></mat-icon>
-    </a>
+<form class="example-form">
+  <ng-container *ngIf="inputVisible">
+    <td>
+      <mat-form-field class="example-full-width">
+        <mat-label>Latitud</mat-label>
+        <input matInput [(ngModel)]="latitud" name="latitud" />
+      </mat-form-field>
+    </td>
+    <td>
+      <mat-form-field class="example-full-width">
+        <mat-label>Longitud</mat-label>
+        <input matInput [(ngModel)]="longitud" name="longitud" />
+      </mat-form-field>
+    </td>
+  </ng-container>
+  <button
+    *ngIf="inputVisible"
+    mat-fab
+    extended
+    color="primary"
+    [disabled]="!latitud || !longitud"
+    (click)="setLocation()"
+  >
+    search
   </button>
+  <button
+    *ngIf="!inputVisible"
+    mat-fab
+    extended
+    color="primary"
+    (click)="mostrarCamposDeEntrada()"
+  >
+    New search
+  </button>
+</form>
+<a class="link" href="/home">
+  <button class="home" mat-fab extended color="primary">
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="home"
+    ></mat-icon>
+  </button>
+</a>
