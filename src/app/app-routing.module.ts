@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LocationsHomeComponent } from './pages/locations-home/locations-home.component';
-import { SearchLocationComponent } from './pages/search-location/search-location.component';
+
+import { NewLocationComponent } from './pages/new-location/new-location.component';
 
 const routes: Routes = [
   {
@@ -10,7 +11,7 @@ const routes: Routes = [
   },
   {
     path:'search',
-    component:SearchLocationComponent
+    component:NewLocationComponent
   },
 
   {

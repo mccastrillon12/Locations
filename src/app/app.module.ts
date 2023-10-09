@@ -20,10 +20,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { InformationModalComponent } from './components/information-modal/information-modal.component';
 import { LocationsHomeComponent } from './pages/locations-home/locations-home.component';
-import { SearchLocationComponent } from './pages/search-location/search-location.component';
+import { SearchLocationComponent } from './components/search-location/search-location.component';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
+import { NewLocationComponent } from './pages/new-location/new-location.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +33,7 @@ import {FormsModule} from '@angular/forms';
     InformationModalComponent,
     LocationsHomeComponent,
     SearchLocationComponent,
+    NewLocationComponent,
 
   ],
   imports: [
