@@ -1,7 +1,16 @@
-<button *ngIf="isSmallScreen" (click)="drawer.toggle()" mat-icon-button>
+<button class="menuButton" *ngIf="isSmallScreen" (click)="drawer.toggle()" mat-icon-button>
   <mat-icon>menu</mat-icon>
 </button>
+<button class="home" mat-fab extended color="primary">
+  <a class="link" href="/search">
+    <mat-icon
+    aria-hidden="false"
+    aria-label="Example home icon"
+    fontIcon="add"
+  ></mat-icon>
+  </a>
 
+</button>
 <mat-drawer-container class="menu" autosize>
   <mat-drawer #drawer [opened]="!isSmallScreen" mode="side" position="start">
     <mat-nav-list>

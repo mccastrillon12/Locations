@@ -10,7 +10,6 @@ mat-card.mat-mdc-card.mdc-card.example-card.ng-star-inserted
   margin-right: 15px
   cursor: pointer
 
-
 mat-card-subtitle
   overflow: hidden
   display: -webkit-box
@@ -29,6 +28,19 @@ mat-card-title.mat-mdc-card-title
   font-size: 12px
 
 
+.link:link
+  color: white
+
+.home
+  position: fixed
+  z-index: 1
+  right: 20px
+  top:15px
+  padding: 8px
+
+.home mat-icon.mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color
+  padding: 2px
+  margin-top: 3px
 
 @media screen and (max-width: 768px)
   .menu
@@ -36,14 +48,14 @@ mat-card-title.mat-mdc-card-title
     left: 0
     z-index: 1
 
-  button
+  .menuButton
     border-color: transparent
     border-radius: 45px
     position: absolute
     z-index: 2
     right: 5px
     background-color: white
-    top: 90%
+    bottom: 0
 
   .mat-drawer-container
     background: none

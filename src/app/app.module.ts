@@ -19,13 +19,20 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatCardModule } from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { InformationModalComponent } from './components/information-modal/information-modal.component';
-
+import { LocationsHomeComponent } from './pages/locations-home/locations-home.component';
+import { SearchLocationComponent } from './pages/search-location/search-location.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule} from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     NoticeComponent,
     MapComponent,
     InformationModalComponent,
+    LocationsHomeComponent,
+    SearchLocationComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -44,6 +51,10 @@ import { InformationModalComponent } from './components/information-modal/inform
     MatCardModule,
     HttpClientModule,
     MatDialogModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatMenuModule,
+    MatInputModule
   ],
 
   providers: [],

@@ -62,7 +62,6 @@ export class NoticeComponent implements OnInit {
   }
 
   openDialog(location: LocationModel) {
-    console.log(location);
     this.dialog.open(InformationModalComponent, {
       height: '400px',
       data: location,
