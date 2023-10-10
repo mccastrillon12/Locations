@@ -1,25 +1,25 @@
 <button
-  class="menuButton"
+  class="notice__button__menu"
   *ngIf="isSmallScreen"
   (click)="drawer.toggle()"
   mat-icon-button
 >
   <mat-icon>menu</mat-icon>
 </button>
-<a class="link" href="/search">
-  <button class="home" mat-fab extended color="primary">New Coordinates</button>
+<a class="notice__link" href="/search">
+  <button class="notice__button" mat-fab extended color="primary">New Coordinates</button>
 </a>
-<mat-drawer-container class="menu" autosize>
+<mat-drawer-container class="notice__menu" autosize>
   <mat-drawer #drawer [opened]="!isSmallScreen" mode="side" position="start">
     <mat-nav-list>
       <mat-card
         (click)="openDialog(location); setLocation(location)"
         *ngFor="let location of locations"
-        class="example-card"
+        class="notice__card"
       >
         <mat-card-header>
           <img
-            class="image"
+            class="notice__image"
             mat-card-sm-image
             src="{{location.image}}"
           />

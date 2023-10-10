@@ -1,6 +1,6 @@
-<form class="example-form">
+<form class="form">
   <ng-container *ngIf="inputVisible">
-    <td>
+    <td class="form__td">
       <mat-form-field class="example-full-width">
         <mat-label>Latitud</mat-label>
         <input matInput [(ngModel)]="latitud" name="latitud" />
@@ -33,8 +33,8 @@
     New search
   </button>
 </form>
-<a class="link" href="/home">
-  <button class="home" mat-fab extended color="primary">
+<a class="form__link" href="/home">
+  <button class="form__button" mat-fab extended color="primary">
     <mat-icon
       aria-hidden="false"
       aria-label="Example home icon"

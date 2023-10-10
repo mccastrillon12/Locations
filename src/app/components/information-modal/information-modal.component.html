@@ -1,13 +1,14 @@
-<h1 >{{ location.address }}</h1>
 
-<div class="container">
-  <img src="{{ location.image }}" alt="" />
-  <div class="information">
-    <h2>Service:</h2>
+
+<div class="modal">
+  <h1 class="modal__title">{{ location.address }}</h1>
+  <img class="modal__img" src="{{ location.image }}" alt="" />
+  <div class="modal__information">
+    <h2 class="modal__subtitle">Service:</h2>
     <div mat-dialog-content>{{ location.serviceName }}</div>
-    <h2>Description:</h2>
+    <h2  class="modal__subtitle">Description:</h2>
     <div mat-dialog-content>{{ location.descriptionLegend }}</div>
-    <h2>Service Typology:</h2>
+    <h2  class="modal__subtitle">Service Typology:</h2>
     <div mat-dialog-content>{{ location.typologyDescription }}</div>
   </div>
 </div>

@@ -1,8 +1,19 @@
+// Variables
+$primary-color: #f55553
+$font-size-h1: 18px
+$font-size-h2: 17px
+$font-size-mobile: 12px
+$margin-default: 20px
+$margin-mobile: 15px
+$img-width-desktop: 280px
+$img-width-mobile: 50%
+
+// Estilos
 button.mdc-button.mat-mdc-button.mat-unthemed.mat-mdc-button-base
   margin-left: 5px
-  background-color: #f55553
+  background-color: $primary-color
   color: white
-  margin-bottom: 20px
+  margin-bottom: $margin-default
 
 .mat-mdc-dialog-container .mdc-dialog__title
   background-color: red
@@ -11,55 +22,57 @@ button.mdc-button.mat-mdc-button.mat-unthemed.mat-mdc-button-base
   justify-content: end
   margin-right: 5%
 
-.container
+.modal
   display: flex
   flex-direction: column
-  margin: 20px
+  margin: $margin-default
   justify-content: center
   align-content: center
   align-items: center
-  display: flex
   flex-wrap: wrap
 
-.information
+.modal__information
   width: 100%
   margin-left: 15px
 
-h1
-  margin: 20px
-  font-size: 18px
+.modal__title
+  margin: $margin-default
+  font-size: $font-size-h1
   font-weight: 500
-img
 
-  width: 280px
+.modal__img
+  width: $img-width-desktop
 
 .mat-mdc-dialog-content.mdc-dialog__content
   padding: 0
 
-h2
-  font-size: 17px
+.modal__subtitle
+  font-size: $font-size-h2
   margin: 0
   margin-top: 10px
 
 @media screen and (max-width: 768px)
-  img
-    width: 50%
+  .modal__img
+    width: $img-width-mobile
+
   .mat-mdc-dialog-actions.mdc-dialog__actions
     padding: 0
 
   .mat-mdc-dialog-content.mdc-dialog__content
-    font-size: 12px
-  h1
-    font-size: 14px
+    font-size: $font-size-mobile
+
+  .modal__title
+    font-size: $font-size-mobile
     margin-top: 15px
     padding: 0
     margin-right: 15px
 
-  h2
-    font-size: 12px
-  .information
+  .modal__subtitle
+    font-size: $font-size-mobile
+
+  .modal__information
     margin-left: 0
     margin-top: 0
 
-  .container
-    margin: 15px
+  .modal
+    margin: $margin-mobile

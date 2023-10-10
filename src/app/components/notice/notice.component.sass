@@ -4,53 +4,50 @@ mat-card-title
 
 mat-card-subtitle
   margin-top: 12px
-
-mat-card.mat-mdc-card.mdc-card.example-card.ng-star-inserted
-  margin-bottom: 15px
-  margin-right: 15px
-  cursor: pointer
-
-mat-card-subtitle
   overflow: hidden
   display: -webkit-box
   -webkit-box-orient: vertical
   -webkit-line-clamp: 1
 
-img.mat-mdc-card-sm-image.mdc-card__media
-  margin-right: 14px
-  border-radius: 5px
-  margin-bottom: 5px
-
-mat-drawer-container.mat-drawer-container.menu
-  width: 100%
+mat-card.mat-mdc-card.mdc-card.notice__card.ng-star-inserted
+  margin-bottom: 15px
+  margin-right: 15px
+  cursor: pointer
 
 mat-card-title.mat-mdc-card-title
   font-size: 12px
 
+.notice__image.mat-mdc-card-sm-image.mdc-card__media
+  margin-right: 14px
+  border-radius: 5px
+  margin-bottom: 5px
 
-a.link
+mat-drawer-container.mat-drawer-container.notice__menu
+  width: 100%
+
+.notice__link
   color: white
   text-decoration: none
   font-size: 12px
 
-.home
+.notice__button
   position: fixed
   z-index: 1
   right: 15px
-  top:15px
+  top: 15px
   padding: 8px
 
-.home mat-icon.mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color
+.notice__button mat-icon.mat-icon.notranslate.material-icons.mat-ligature-font.mat-icon-no-color
   padding: 2px
   margin-top: 3px
 
 @media screen and (max-width: 768px)
-  .menu
+  .notice__menu
     position: inherit
     left: 0
     z-index: 1
 
-  .menuButton
+  .notice__button__menu
     border-color: transparent
     border-radius: 45px
     position: absolute
@@ -62,7 +59,7 @@ a.link
   .mat-drawer-container
     background: none
 
-  .home
+  .notice__button
     right: 5px
 
   mat-drawer.mat-drawer.ng-tns-c2384444419-0.ng-trigger.ng-trigger-transform.mat-drawer-side.ng-star-inserted.mat-drawer-opened
